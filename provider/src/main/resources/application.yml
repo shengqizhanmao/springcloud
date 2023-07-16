@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: provider
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  output:
+    ansi:
+      enabled: always
+dubbo:
+  scan:
+    base-packages: com.lin.provider.service
+  protocol:
+    name: dubbo
+    port: -1
+    serialization: kryo
+  registry:
+    address: nacos://192.168.175.1:8848
+    protocol: roundrobin
+server:
+  port: 9001
